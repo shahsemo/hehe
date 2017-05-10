@@ -118,8 +118,7 @@
 				C920D6761EB624E700D095FC /* Info.plist */,
 				C9CF89101EB9F14000B5AE95 /* Constants.swift */,
 			);
-			name = ShareATextbook;
-			path = ntucTest;
+			path = ShareATextbook;
 			sourceTree = "<group>";
 		};
 		C920D67E1EB624E700D095FC /* ShareATextbookTests */ = {
@@ -128,8 +127,7 @@
 				C920D67F1EB624E700D095FC /* ntucTestTests.swift */,
 				C920D6811EB624E700D095FC /* Info.plist */,
 			);
-			name = ShareATextbookTests;
-			path = ntucTestTests;
+			path = ShareATextbookTests;
 			sourceTree = "<group>";
 		};
 		C920D6891EB624E700D095FC /* ShareATextbooUITests */ = {
@@ -139,7 +137,7 @@
 				C920D68C1EB624E700D095FC /* Info.plist */,
 			);
 			name = ShareATextbooUITests;
-			path = ntucTestUITests;
+			path = ShareATextbookUITests;
 			sourceTree = "<group>";
 		};
 		C920D6981EB6253600D095FC /* Model */ = {
@@ -465,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CUQ48GKRB4;
-				INFOPLIST_FILE = ntucTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chialy.ShareATextbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CUQ48GKRB4;
-				INFOPLIST_FILE = ntucTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chialy.ShareATextbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
