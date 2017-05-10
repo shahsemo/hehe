@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="ntucTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -31,7 +31,7 @@
         <!--Login View Controller-->
         <scene sceneID="mwi-mY-rae">
             <objects>
-                <viewController id="0Jd-1D-2iW" customClass="LoginViewController" customModule="ntucTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Jd-1D-2iW" customClass="LoginViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PHW-CH-fA2"/>
                         <viewControllerLayoutGuide type="bottom" id="to9-GU-UgU"/>
@@ -85,7 +85,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
                                                         <state key="normal" title="Login"/>
                                                         <connections>
-                                                            <segue destination="49e-Tb-3d3" kind="show" id="f0W-AX-F28"/>
+                                                            <segue destination="49e-Tb-3d3" kind="show" id="eav-UD-dxz"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -113,7 +113,7 @@
         <!--Add-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="ntucTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -153,7 +153,7 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="CustomTabBarController" customModule="ntucTest" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="CustomTabBarController" customModule="ShareATextbook" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dAq-9A-HsD"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
@@ -205,7 +205,7 @@
         <!--Pin-->
         <scene sceneID="Wh8-Ei-ZW3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mpo-53-erK" customClass="CustomNavigationViewController" customModule="ntucTest" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mpo-53-erK" customClass="CustomNavigationViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Pin" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -229,7 +229,7 @@
         <!--Profile-->
         <scene sceneID="WOX-xT-9iO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RqJ-EL-EzC" customClass="CustomNavigationViewController" customModule="ntucTest" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RqJ-EL-EzC" customClass="CustomNavigationViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="Profile" image="Profile-1" id="Qg4-dS-rBf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2tG-A8-EJI">
@@ -248,7 +248,7 @@
         <!--Home-->
         <scene sceneID="9Zs-8d-NfV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGD-Ue-pn7" customClass="CustomNavigationViewController" customModule="ntucTest" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGD-Ue-pn7" customClass="CustomNavigationViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AO7-iH-1Gb">
