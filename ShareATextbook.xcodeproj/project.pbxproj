@@ -109,6 +109,7 @@
 		C920D6671EB624E700D095FC /* ShareATextbook */ = {
 			isa = PBXGroup;
 			children = (
+				C921B9221ED8772C00599E7B /* DataManager */,
 				C920D69A1EB6254400D095FC /* Controller */,
 				C920D6991EB6253F00D095FC /* View */,
 				C920D6981EB6253600D095FC /* Model */,
@@ -159,13 +160,28 @@
 		C920D69A1EB6254400D095FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C9690BBF1EB994BB0054BAB7 /* CustomTabBarController.swift */,
+				C921B9231ED878E600599E7B /* CustomUIComponentController */,
 				C920D66A1EB624E700D095FC /* FirstViewController.swift */,
 				C920D66C1EB624E700D095FC /* SecondViewController.swift */,
 				C920D69D1EB6265400D095FC /* LoginViewController.swift */,
-				C9F1F3821EC1FD8C00E8C71C /* CustomNavigationViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C921B9221ED8772C00599E7B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		C921B9231ED878E600599E7B /* CustomUIComponentController */ = {
+			isa = PBXGroup;
+			children = (
+				C9690BBF1EB994BB0054BAB7 /* CustomTabBarController.swift */,
+				C9F1F3821EC1FD8C00E8C71C /* CustomNavigationViewController.swift */,
+			);
+			name = CustomUIComponentController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

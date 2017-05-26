@@ -249,11 +249,11 @@
             </objects>
             <point key="canvasLocation" x="1150" y="761"/>
         </scene>
-        <!--Add-->
+        <!--Donate-->
         <scene sceneID="eCp-9Y-u3H">
             <objects>
                 <navigationController id="yyt-SZ-G1x" customClass="CustomNavigationViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Add" id="WEC-xm-B0E"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Donate" id="WEC-xm-B0E"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aVM-Rh-mVL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

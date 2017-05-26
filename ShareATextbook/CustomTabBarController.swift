@@ -45,7 +45,7 @@ class CustomTabBarController: UITabBarController {
         menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
         
         var menuButtonFrame = menuButton.frame
-        menuButtonFrame.origin.y = (self.view.bounds.height - menuButtonFrame.height) - 12
+        menuButtonFrame.origin.y = (self.view.bounds.height - menuButtonFrame.height) - 15
         menuButtonFrame.origin.x = self.view.bounds.width/2 - menuButtonFrame.size.width/2
         menuButton.frame = menuButtonFrame
         
