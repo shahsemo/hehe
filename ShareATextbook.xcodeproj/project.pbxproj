@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51FD58891EDD403C00D07539 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD58871EDD403C00D07539 /* HTTP.swift */; };
+		51FD588A1EDD403C00D07539 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD58881EDD403C00D07539 /* SwiftyJSON.swift */; };
 		C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D6681EB624E700D095FC /* AppDelegate.swift */; };
 		C920D66B1EB624E700D095FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D66A1EB624E700D095FC /* FirstViewController.swift */; };
 		C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D66C1EB624E700D095FC /* SecondViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51FD58871EDD403C00D07539 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTP.swift; path = ../../../Downloads/FairpriceShareTextbook/FairpriceShareTextbook/HTTP.swift; sourceTree = "<group>"; };
+		51FD58881EDD403C00D07539 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../../../Downloads/FairpriceShareTextbook/FairpriceShareTextbook/SwiftyJSON.swift; sourceTree = "<group>"; };
 		C920D6651EB624E700D095FC /* ShareATextbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareATextbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C920D6681EB624E700D095FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C920D66A1EB624E700D095FC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51FD58861EDD401F00D07539 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				51FD58871EDD403C00D07539 /* HTTP.swift */,
+				51FD58881EDD403C00D07539 /* SwiftyJSON.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		C920D65C1EB624E700D095FC = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +122,10 @@
 		C920D6671EB624E700D095FC /* ShareATextbook */ = {
 			isa = PBXGroup;
 			children = (
-				C921B9221ED8772C00599E7B /* DataManager */,
-				C920D69A1EB6254400D095FC /* Controller */,
-				C920D6991EB6253F00D095FC /* View */,
+				51FD58861EDD401F00D07539 /* Helpers */,
+				C921B9221ED8772C00599E7B /* DataManagers */,
+				C920D69A1EB6254400D095FC /* ViewControllers */,
+				C920D6991EB6253F00D095FC /* Storyboards */,
 				C920D6981EB6253600D095FC /* Model */,
 				C920D6681EB624E700D095FC /* AppDelegate.swift */,
 				C920D6711EB624E700D095FC /* Assets.xcassets */,
@@ -149,39 +163,39 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		C920D6991EB6253F00D095FC /* View */ = {
+		C920D6991EB6253F00D095FC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				C920D66E1EB624E700D095FC /* Main.storyboard */,
 			);
-			name = View;
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		C920D69A1EB6254400D095FC /* Controller */ = {
+		C920D69A1EB6254400D095FC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C921B9231ED878E600599E7B /* CustomUIComponentController */,
+				C921B9231ED878E600599E7B /* CustomViewControllers */,
 				C920D66A1EB624E700D095FC /* FirstViewController.swift */,
 				C920D66C1EB624E700D095FC /* SecondViewController.swift */,
 				C920D69D1EB6265400D095FC /* LoginViewController.swift */,
 			);
-			name = Controller;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		C921B9221ED8772C00599E7B /* DataManager */ = {
+		C921B9221ED8772C00599E7B /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = DataManager;
+			name = DataManagers;
 			sourceTree = "<group>";
 		};
-		C921B9231ED878E600599E7B /* CustomUIComponentController */ = {
+		C921B9231ED878E600599E7B /* CustomViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C9690BBF1EB994BB0054BAB7 /* CustomTabBarController.swift */,
 				C9F1F3821EC1FD8C00E8C71C /* CustomNavigationViewController.swift */,
 			);
-			name = CustomUIComponentController;
+			name = CustomViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +266,6 @@
 				TargetAttributes = {
 					C920D6641EB624E700D095FC = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = CUQ48GKRB4;
 						ProvisioningStyle = Automatic;
 					};
 					C920D67A1EB624E700D095FC = {
@@ -319,8 +332,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51FD58891EDD403C00D07539 /* HTTP.swift in Sources */,
 				C920D69C1EB6259900D095FC /* User.swift in Sources */,
 				C9F1F3831EC1FD8C00E8C71C /* CustomNavigationViewController.swift in Sources */,
+				51FD588A1EDD403C00D07539 /* SwiftyJSON.swift in Sources */,
 				C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */,
 				C9690BC01EB994BB0054BAB7 /* CustomTabBarController.swift in Sources */,
 				C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */,
@@ -478,8 +493,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CUQ48GKRB4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chialy.ShareATextbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,8 +507,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CUQ48GKRB4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chialy.ShareATextbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
