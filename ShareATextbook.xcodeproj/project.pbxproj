@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51FD58891EDD403C00D07539 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD58871EDD403C00D07539 /* HTTP.swift */; };
-		51FD588A1EDD403C00D07539 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD58881EDD403C00D07539 /* SwiftyJSON.swift */; };
+		C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF31EF1563E00CBF4F1 /* HTTP.swift */; };
+		C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */; };
 		C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D6681EB624E700D095FC /* AppDelegate.swift */; };
 		C920D66B1EB624E700D095FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D66A1EB624E700D095FC /* FirstViewController.swift */; };
 		C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D66C1EB624E700D095FC /* SecondViewController.swift */; };
@@ -42,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		51FD58871EDD403C00D07539 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTP.swift; path = ../../../Downloads/FairpriceShareTextbook/FairpriceShareTextbook/HTTP.swift; sourceTree = "<group>"; };
-		51FD58881EDD403C00D07539 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../../../Downloads/FairpriceShareTextbook/FairpriceShareTextbook/SwiftyJSON.swift; sourceTree = "<group>"; };
+		C917BDF31EF1563E00CBF4F1 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C920D6651EB624E700D095FC /* ShareATextbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareATextbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C920D6681EB624E700D095FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C920D66A1EB624E700D095FC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		51FD58861EDD401F00D07539 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				51FD58871EDD403C00D07539 /* HTTP.swift */,
-				51FD58881EDD403C00D07539 /* SwiftyJSON.swift */,
+				C917BDF31EF1563E00CBF4F1 /* HTTP.swift */,
+				C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -332,10 +332,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51FD58891EDD403C00D07539 /* HTTP.swift in Sources */,
+				C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */,
 				C920D69C1EB6259900D095FC /* User.swift in Sources */,
 				C9F1F3831EC1FD8C00E8C71C /* CustomNavigationViewController.swift in Sources */,
-				51FD588A1EDD403C00D07539 /* SwiftyJSON.swift in Sources */,
+				C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */,
 				C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */,
 				C9690BC01EB994BB0054BAB7 /* CustomTabBarController.swift in Sources */,
 				C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */,
