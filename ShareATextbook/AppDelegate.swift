@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //  Set background color to red
+        UINavigationBar.appearance().barTintColor = colors.red
+       
+        //  Set status bar color to white
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 

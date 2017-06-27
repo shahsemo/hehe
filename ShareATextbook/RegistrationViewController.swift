@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     
     
     @IBOutlet weak var nameTextField : UITextField!
@@ -19,33 +19,43 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var phoneTextField : UITextField!
     @IBOutlet weak var confirmPasswordField : UITextField!
     
-    var usernameField : String = "asd"
-    var emailField : String = "asd"
-    var phoneField : String = "asd"
-    var passwordField : String = "asd"
+    @IBOutlet weak var TOSBox: BEMCheckBox!
+    
+    
+    
+    var usernameField : String = ""
+    var emailField : String = ""
+    var phoneField : String = ""
+    var passwordField : String = ""
+    var confirmField : String = ""
+    var agreeToTOS : Bool = true
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
-        
+        TOSBox.delegate = self
         view.backgroundColor = UIColor(r: 240, g: 240, b: 240)
         
-        print(usernameField)
-        print(passwordTextField)
-        print(emailField)
-        print(phoneField)
-        
-        
+    
+        setupNavigationBar()
         
         
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        TOSBox.setOn(true, animated: true)
+    }
     
     
-   
+    
+
+    
+    // Function to create users
     @IBAction func createUser() {
         
         
@@ -55,49 +65,49 @@ class RegistrationViewController: UIViewController {
         phoneField = passwordTextField.text!
         
         
-        print(usernameField)
-        print(passwordTextField)
-        print(emailField)
-        print(phoneField)
         
-//        var usersList: [User]?
-//        
-//       
-//        
-//       let users = User(
-//        username: usernameField,
-//        password: passwordField,
-//        email: emailField,
-//        phone: phoneField
-//        )
-//        
-//        usersList!.append(users)
         
-        DispatchQueue.global(qos: .background).async {
-            HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/add", json: JSON.init([
-                
-                
-                ]), onComplete: {
-                json, response, error in
-                
-                if response == nil
-                {
-                    return
-                }
-                
-                
-                
-                print(response!)
-                
-            })
-        } // End of Dispatch Queue
+        // Convert password to SHA512
+        passwordField = maskPassword()
+        
+        
+        print("\(usernameField) \n")
+        print("\(passwordField) \n")
+        print("\(emailField) \n")
+        print("\(phoneField) \n")
+        
+        
+//        let json = JSON.init([
+//            "name" : usernameField,
+//            "email" : emailField,
+//            "password" : passwordField,
+//            "phone" : phoneField,
+//            "showemail" : "N",
+//            "showphone" : "N"
+//            ])
+//        
+//        DispatchQueue.global(qos: .background).async {
+//            HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/add", json: json, onComplete: {
+//                json, response, error in
+//                
+//                if response != nil
+//                {
+//                    return
+//                }
+//                
+//                
+//                
+//                print(response!)
+//                
+//            })
+//        } // End of Dispatch Queue
         
     }
     
     // Create function for convert password
     // to SHA512 as an requirement
     func maskPassword() -> String {
-        return ""
+        return sha512Hex(string: passwordField)
     }
     
 
@@ -106,15 +116,31 @@ class RegistrationViewController: UIViewController {
     // Create function to check if password match
     // If password is true, returns.
     func checkPasswordMatch() -> Bool {
-        return false
+        
+        if passwordField == confirmField {
+            return true
+        } else {
+            return false
+        }
+        
+    
     }
     
     // Create function to check if the fields are filled
     // If fields are filled, return true.
     func checkAllFieldsRequired() -> Bool {
         
+        // usernameField, emailField, phoneField, passwordField, agreeToTOS
         
-        return false
+        
+        if usernameField == nil { return false }
+        else if emailField == nil { return false }
+        else if phoneField == nil { return false }
+        else if checkPasswordMatch() == false { return false }
+        else if agreeToTOS == false { return false }
+        else { return true }
+            
+    
     }
 
     
@@ -122,6 +148,52 @@ class RegistrationViewController: UIViewController {
     func checkUserExist() -> Bool {
         return false
     }
+    
+    // Function to check if checkbox is checked.
+    func didTap(_ checkBox: BEMCheckBox) {
+        if(checkBox.on) {
+            agreeToTOS = true
+            print(agreeToTOS)
+        } else {
+            agreeToTOS = false
+            print(agreeToTOS)
+        }
+    }
+    
+    // Function to convert String to SHA512
+    func sha512Hex(string: String) -> String {
+        let data = string.data(using: .utf8)!
+        
+        var digest = [UInt8](repeating: 0, count: Int(CC_SHA512_DIGEST_LENGTH))
+        
+        data.withUnsafeBytes({
+            _ = CC_SHA512($0, CC_LONG(data.count), &digest)
+        })
+        
+        var digestHex = ""
+        for index in 0..<Int(CC_SHA512_DIGEST_LENGTH) {
+            digestHex += String(format: "%02x", digest[index])
+        }
+        
+        return digestHex
+    }
+    
+    // Set up the navigation bar
+    func setupNavigationBar() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil )
+       
+        
+      
+    }
+    
+    
+    // Override func for exit edit when on textfield
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    
     
     
 }

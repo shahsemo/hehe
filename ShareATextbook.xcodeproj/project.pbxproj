@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */; };
+		8F1F32421F0170C100DE910C /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323B1F0170C100DE910C /* BEMAnimationManager.m */; };
+		8F1F32431F0170C100DE910C /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323D1F0170C100DE910C /* BEMCheckBox.m */; };
+		8F1F32441F0170C100DE910C /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323F1F0170C100DE910C /* BEMCheckBoxGroup.m */; };
+		8F1F32451F0170C100DE910C /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F32411F0170C100DE910C /* BEMPathManager.m */; };
+		8F1F324B1F01942C00DE910C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */; };
+		8F1F324D1F0194A100DE910C /* HomeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */; };
 		8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */; };
+		8FF513F41F01EB13000211DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF513F31F01EB13000211DB /* Security.framework */; };
 		C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF31EF1563E00CBF4F1 /* HTTP.swift */; };
 		C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */; };
 		C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C920D6681EB624E700D095FC /* AppDelegate.swift */; };
@@ -45,7 +52,19 @@
 
 /* Begin PBXFileReference section */
 		8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIViewButtons.swift; sourceTree = "<group>"; };
+		8F1F323A1F0170C100DE910C /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
+		8F1F323B1F0170C100DE910C /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAnimationManager.m; sourceTree = "<group>"; };
+		8F1F323C1F0170C100DE910C /* BEMCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
+		8F1F323D1F0170C100DE910C /* BEMCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCheckBox.m; sourceTree = "<group>"; };
+		8F1F323E1F0170C100DE910C /* BEMCheckBoxGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCheckBoxGroup.h; sourceTree = "<group>"; };
+		8F1F323F1F0170C100DE910C /* BEMCheckBoxGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCheckBoxGroup.m; sourceTree = "<group>"; };
+		8F1F32401F0170C100DE910C /* BEMPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPathManager.h; sourceTree = "<group>"; };
+		8F1F32411F0170C100DE910C /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPathManager.m; sourceTree = "<group>"; };
+		8F1F32461F01710400DE910C /* CheckboxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxHeader.h; sourceTree = "<group>"; };
+		8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentTableViewCell.swift; sourceTree = "<group>"; };
 		8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		8FF513F31F01EB13000211DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C917BDF31EF1563E00CBF4F1 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C920D6651EB624E700D095FC /* ShareATextbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareATextbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF513F41F01EB13000211DB /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +123,38 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		8F1F32391F0170C100DE910C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F323A1F0170C100DE910C /* BEMAnimationManager.h */,
+				8F1F323B1F0170C100DE910C /* BEMAnimationManager.m */,
+				8F1F323C1F0170C100DE910C /* BEMCheckBox.h */,
+				8F1F323D1F0170C100DE910C /* BEMCheckBox.m */,
+				8F1F323E1F0170C100DE910C /* BEMCheckBoxGroup.h */,
+				8F1F323F1F0170C100DE910C /* BEMCheckBoxGroup.m */,
+				8F1F32401F0170C100DE910C /* BEMPathManager.h */,
+				8F1F32411F0170C100DE910C /* BEMPathManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8F1F32471F01711D00DE910C /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F32461F01710400DE910C /* CheckboxHeader.h */,
+			);
+			name = "Header Files";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8FF513F21F01EB13000211DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FF513F31F01EB13000211DB /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C920D65C1EB624E700D095FC = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +162,7 @@
 				C920D67E1EB624E700D095FC /* ShareATextbookTests */,
 				C920D6891EB624E700D095FC /* ShareATextbooUITests */,
 				C920D6661EB624E700D095FC /* Products */,
+				8FF513F21F01EB13000211DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +179,8 @@
 		C920D6671EB624E700D095FC /* ShareATextbook */ = {
 			isa = PBXGroup;
 			children = (
+				8F1F32471F01711D00DE910C /* Header Files */,
+				8F1F32391F0170C100DE910C /* Classes */,
 				51FD58861EDD401F00D07539 /* Helpers */,
 				C921B9221ED8772C00599E7B /* DataManagers */,
 				C920D69A1EB6254400D095FC /* ViewControllers */,
@@ -183,6 +238,8 @@
 				C920D66C1EB624E700D095FC /* SecondViewController.swift */,
 				C920D69D1EB6265400D095FC /* LoginViewController.swift */,
 				8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */,
+				8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */,
+				8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +329,7 @@
 				TargetAttributes = {
 					C920D6641EB624E700D095FC = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 89782M2XS3;
 						ProvisioningStyle = Automatic;
 					};
 					C920D67A1EB624E700D095FC = {
@@ -339,16 +397,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */,
+				8F1F32431F0170C100DE910C /* BEMCheckBox.m in Sources */,
 				C920D69C1EB6259900D095FC /* User.swift in Sources */,
+				8F1F32441F0170C100DE910C /* BEMCheckBoxGroup.m in Sources */,
 				C9F1F3831EC1FD8C00E8C71C /* CustomNavigationViewController.swift in Sources */,
 				8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */,
 				C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */,
+				8F1F32451F0170C100DE910C /* BEMPathManager.m in Sources */,
 				C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */,
 				C9690BC01EB994BB0054BAB7 /* CustomTabBarController.swift in Sources */,
 				8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */,
 				C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */,
+				8F1F324D1F0194A100DE910C /* HomeContentTableViewCell.swift in Sources */,
+				8F1F324B1F01942C00DE910C /* HomeTableViewController.swift in Sources */,
 				C9CF89111EB9F14000B5AE95 /* Constants.swift in Sources */,
 				C920D69E1EB6265400D095FC /* LoginViewController.swift in Sources */,
+				8F1F32421F0170C100DE910C /* BEMAnimationManager.m in Sources */,
 				C920D66B1EB624E700D095FC /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,12 +565,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 89782M2XS3;
 				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chialy.ShareATextbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CheckboxHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -515,12 +580,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 89782M2XS3;
 				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chialy.ShareATextbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CheckboxHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
