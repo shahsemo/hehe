@@ -46,11 +46,11 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        TOSBox.setOn(true, animated: true)
-    }
-    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        TOSBox.setOn(true, animated: true)
+//    }
+//    
     
     
 
@@ -58,17 +58,21 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     // Function to create users
     @IBAction func createUser() {
         
+        // Put text fields value into the variables
+            usernameField = nameTextField.text!
+            passwordField = passwordTextField.text!
+            emailField = emailTextField.text!
+            phoneField = passwordTextField.text!
+            confirmField = confirmPasswordField.text!
         
-        usernameField = nameTextField.text!
-        passwordField = passwordTextField.text!
-        emailField = emailTextField.text!
-        phoneField = passwordTextField.text!
         
-        
-        
-        
-        // Convert password to SHA512
-        passwordField = maskPassword()
+        // Check if password field matches confirm field
+            if passwordField == confirmField {
+                
+                // Convert password to SHA512
+                    passwordField = maskPassword(passwordField)
+                    confirmField = maskPassword(confirmField)
+            }
         
         
         print("\(usernameField) \n")
@@ -77,71 +81,89 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
         print("\(phoneField) \n")
         
         
-//        let json = JSON.init([
-//            "name" : usernameField,
-//            "email" : emailField,
-//            "password" : passwordField,
-//            "phone" : phoneField,
-//            "showemail" : "N",
-//            "showphone" : "N"
-//            ])
-//        
-//        DispatchQueue.global(qos: .background).async {
-//            HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/add", json: json, onComplete: {
-//                json, response, error in
-//                
-//                if response != nil
-//                {
-//                    return
-//                }
-//                
-//                
-//                
-//                print(response!)
-//                
-//            })
-//        } // End of Dispatch Queue
+        // Check if the userfields is filled
+            if checkAllFieldsRequired() == true {
+                let json = JSON.init([
+                    "name" : usernameField,
+                    "email" : emailField,
+                    "password" : passwordField,
+                    "phone" : phoneField,
+                    "showemail" : "false",
+                    "showphone" : "false",
+                    "type" : "E"
+                    ])
+                
+                DispatchQueue.global(qos: .background).async {
+                    HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/add", json: json, onComplete: {
+                        json, response, error in
+                        
+                        if response != nil
+                        {
+                            return 
+                        }
+                        
+                        if json != nil {
+                           print(json!)
+                        }
+                        
+                        
+                        
+
+                        
+                    })
+                } // End of Dispatch Queue
+        } // End of the if 
         
     }
     
     // Create function for convert password
     // to SHA512 as an requirement
-    func maskPassword() -> String {
-        return sha512Hex(string: passwordField)
-    }
+    func maskPassword(_ password: String) -> String {
+            return sha512Hex(string: password)
+        }
     
 
     
     
     // Create function to check if password match
     // If password is true, returns.
-    func checkPasswordMatch() -> Bool {
-        
-        if passwordField == confirmField {
-            return true
-        } else {
-            return false
+        func checkPasswordMatch() -> Bool {
+            
+            if passwordField == confirmField {
+                return true
+            } else {
+                return false
+            }
+            
+            
         }
-        
-    
-    }
     
     // Create function to check if the fields are filled
     // If fields are filled, return true.
-    func checkAllFieldsRequired() -> Bool {
-        
-        // usernameField, emailField, phoneField, passwordField, agreeToTOS
-        
-        
-        if usernameField == nil { return false }
-        else if emailField == nil { return false }
-        else if phoneField == nil { return false }
-        else if checkPasswordMatch() == false { return false }
-        else if agreeToTOS == false { return false }
-        else { return true }
+        func checkAllFieldsRequired() -> Bool {
             
-    
-    }
+            var message = ""
+            var validFormat = false
+            
+            if usernameField.isEmpty == true { message = "Username is required" }
+            else if isValidEmail(emailField) != true { message = "Email is required/invalid" }
+            else if phoneField.isEmpty == true { message = "Phone number is required"}
+            else if passwordField != confirmField { message = "Password does not match" }
+            else if agreeToTOS == false { message = "Must agree to the terms" }
+            else { validFormat = true }
+            
+            let uiAlert = UIAlertController(
+                title: "Required Fills",
+                message: message,
+                preferredStyle: UIAlertControllerStyle.alert)
+            
+            uiAlert.addAction(UIAlertAction(title: "Ok", style: .default,handler: nil))
+            self.present(uiAlert, animated:true, completion: nil)
+                
+        
+            return validFormat
+            
+        }
 
     
     // Create function to check if username exists in the database
@@ -195,6 +217,15 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     
     
     
+    func isValidEmail(_ email: String) -> Bool {
+        return email.characters.count > 0 && NSPredicate(format: "self matches %@", "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,64}").evaluate(with: email)
+    }
+    
+    func isValidField(_ fields: String) -> Bool {
+        return fields.characters.count > 4 && fields.rangeOfCharacter(from: .whitespacesAndNewlines) == nil
+    }
+    
+    
     
 }
 
@@ -206,3 +237,6 @@ extension UIColor {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
 }
+
+
+

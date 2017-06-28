@@ -12,7 +12,7 @@ class HomeTableViewController: UITableViewController {
 
     
     
-    var categories = [["image":"textbook"], ["image": "TYS"]]
+    var categories = [["img": "textbook"], ["img": "TYS"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +50,10 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeContentTableViewCell
         
-        let category = categories[indexPath.row]
+        let bookCat = categories[indexPath.row]
         
-        cell.backgroundImage.image = UIImage(named: category["image"]!)
+        let s = bookCat["img"]!
+        cell.backgroundImage.image = UIImage(named: s)
 
         
 

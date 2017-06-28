@@ -11,6 +11,7 @@ import UIKit
 class HomeContentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
