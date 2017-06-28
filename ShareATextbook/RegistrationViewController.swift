@@ -81,39 +81,6 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
         print("\(phoneField) \n")
         
         
-        // Check if the userfields is filled
-            if checkAllFieldsRequired() == true {
-                let json = JSON.init([
-                    "name" : usernameField,
-                    "email" : emailField,
-                    "password" : passwordField,
-                    "phone" : phoneField,
-                    "showemail" : "false",
-                    "showphone" : "false",
-                    "type" : "E"
-                    ])
-                
-                DispatchQueue.global(qos: .background).async {
-                    HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/add", json: json, onComplete: {
-                        json, response, error in
-                        
-                        if response != nil
-                        {
-                            return 
-                        }
-                        
-                        if json != nil {
-                           print(json!)
-                        }
-                        
-                        
-                        
-
-                        
-                    })
-                } // End of Dispatch Queue
-        } // End of the if 
-        
     }
     
     // Create function for convert password
