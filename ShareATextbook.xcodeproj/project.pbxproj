@@ -18,6 +18,9 @@
 		8F32DB051F0BBEB40021D095 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32DB041F0BBEB40021D095 /* HomeViewController.swift */; };
 		8F32DB071F0BBF3B0021D095 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F32DB061F0BBF3B0021D095 /* homepage.storyboard */; };
 		8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */; };
+		8FDF30E61F0BD5AA00359916 /* feature.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDF30E51F0BD5AA00359916 /* feature.xib */; };
+		8FDF30E81F0BD69400359916 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF30E71F0BD69400359916 /* FeatureView.swift */; };
+		8FDF30EA1F0BD81B00359916 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF30E91F0BD81B00359916 /* HomeDataManager.swift */; };
 		8FF513F41F01EB13000211DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF513F31F01EB13000211DB /* Security.framework */; };
 		C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF31EF1563E00CBF4F1 /* HTTP.swift */; };
 		C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */; };
@@ -70,6 +73,9 @@
 		8F32DB041F0BBEB40021D095 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8F32DB061F0BBF3B0021D095 /* homepage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
 		8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		8FDF30E51F0BD5AA00359916 /* feature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = feature.xib; sourceTree = "<group>"; };
+		8FDF30E71F0BD69400359916 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
+		8FDF30E91F0BD81B00359916 /* HomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		8FF513F31F01EB13000211DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C917BDF31EF1563E00CBF4F1 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -153,6 +159,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		8FDF30E41F0BD56B00359916 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				8FDF30E51F0BD5AA00359916 /* feature.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
 		8FF513F21F01EB13000211DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +245,7 @@
 		C920D6991EB6253F00D095FC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8FDF30E41F0BD56B00359916 /* XIB */,
 				C920D66E1EB624E700D095FC /* Main.storyboard */,
 				51E9C45F1F09E39200DF9CD5 /* Search.storyboard */,
 				8F32DB061F0BBF3B0021D095 /* homepage.storyboard */,
@@ -256,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				8F32DB021F0BBE730021D095 /* RegistrationDataManager.swift */,
+				8FDF30E91F0BD81B00359916 /* HomeDataManager.swift */,
 			);
 			name = DataManagers;
 			sourceTree = "<group>";
@@ -266,6 +282,7 @@
 				C9690BBF1EB994BB0054BAB7 /* CustomTabBarController.swift */,
 				C9F1F3821EC1FD8C00E8C71C /* CustomNavigationViewController.swift */,
 				8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */,
+				8FDF30E71F0BD69400359916 /* FeatureView.swift */,
 			);
 			name = CustomViewControllers;
 			sourceTree = "<group>";
@@ -380,6 +397,7 @@
 			files = (
 				C920D6751EB624E700D095FC /* LaunchScreen.storyboard in Resources */,
 				51E9C4601F09E39200DF9CD5 /* Search.storyboard in Resources */,
+				8FDF30E61F0BD5AA00359916 /* feature.xib in Resources */,
 				8F32DB071F0BBF3B0021D095 /* homepage.storyboard in Resources */,
 				C920D6721EB624E700D095FC /* Assets.xcassets in Resources */,
 				C920D6701EB624E700D095FC /* Main.storyboard in Resources */,
@@ -417,7 +435,9 @@
 				8F1F32451F0170C100DE910C /* BEMPathManager.m in Sources */,
 				C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */,
 				C9690BC01EB994BB0054BAB7 /* CustomTabBarController.swift in Sources */,
+				8FDF30EA1F0BD81B00359916 /* HomeDataManager.swift in Sources */,
 				8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */,
+				8FDF30E81F0BD69400359916 /* FeatureView.swift in Sources */,
 				C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */,
 				8F1F324D1F0194A100DE910C /* HomeContentTableViewCell.swift in Sources */,
 				8F32DB031F0BBE730021D095 /* RegistrationDataManager.swift in Sources */,

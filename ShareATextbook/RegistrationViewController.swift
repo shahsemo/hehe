@@ -109,8 +109,12 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
         let actionSheet = UIAlertController(title: "Choose a photo source", message: "pick one", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler:  { (action: UIAlertAction) in
-            imagePickerController.sourceType = .camera
-            self.present(imagePickerController, animated: true, completion: nil)
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            } 
+            
             
         }))
         
