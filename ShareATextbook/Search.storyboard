@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AlB-YO-UMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AlB-YO-UMS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="KiH-eF-yel">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S4W-3i-gXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Home" id="dpC-Ch-x6y" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Od3-SV-HRk"/>
-                </viewControllerPlaceholder>
-            </objects>
-            <point key="canvasLocation" x="-1178" y="907"/>
-        </scene>
         <!--Search-->
         <scene sceneID="orR-Dc-6Y5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dLG-x3-dUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="8qU-Os-XG4" customClass="SearchTableViewController" customModule="ShareATextbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IFt-8i-Xs2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -38,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25V-RV-YYe" id="DWf-TE-jmx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -50,6 +39,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Search" id="WWV-8V-GnG" userLabel="Search View Controller"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLG-x3-dUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="842" y="457"/>
         </scene>

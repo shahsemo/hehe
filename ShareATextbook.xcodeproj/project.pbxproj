@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		51E9C4601F09E39200DF9CD5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E9C45F1F09E39200DF9CD5 /* Search.storyboard */; };
-		51E9C4661F09E66000DF9CD5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9C4651F09E66000DF9CD5 /* SearchTableViewController.swift */; };
-		51E9C4681F09EBE100DF9CD5 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9C4671F09EBE100DF9CD5 /* Candy.swift */; };
 		8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */; };
 		8F1F32421F0170C100DE910C /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323B1F0170C100DE910C /* BEMAnimationManager.m */; };
 		8F1F32431F0170C100DE910C /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323D1F0170C100DE910C /* BEMCheckBox.m */; };
@@ -55,8 +53,6 @@
 
 /* Begin PBXFileReference section */
 		51E9C45F1F09E39200DF9CD5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		51E9C4651F09E66000DF9CD5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		51E9C4671F09EBE100DF9CD5 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Candy.swift; path = ../../../Downloads/CandySearch/CandySearch/Candy.swift; sourceTree = "<group>"; };
 		8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIViewButtons.swift; sourceTree = "<group>"; };
 		8F1F323A1F0170C100DE910C /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
 		8F1F323B1F0170C100DE910C /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAnimationManager.m; sourceTree = "<group>"; };
@@ -247,7 +243,6 @@
 				8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */,
 				8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */,
 				8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */,
-				51E9C4651F09E66000DF9CD5 /* SearchTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -255,7 +250,6 @@
 		C921B9221ED8772C00599E7B /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
-				51E9C4671F09EBE100DF9CD5 /* Candy.swift */,
 			);
 			name = DataManagers;
 			sourceTree = "<group>";
@@ -407,12 +401,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */,
-				51E9C4681F09EBE100DF9CD5 /* Candy.swift in Sources */,
 				8F1F32431F0170C100DE910C /* BEMCheckBox.m in Sources */,
 				C920D69C1EB6259900D095FC /* User.swift in Sources */,
 				8F1F32441F0170C100DE910C /* BEMCheckBoxGroup.m in Sources */,
 				C9F1F3831EC1FD8C00E8C71C /* CustomNavigationViewController.swift in Sources */,
-				51E9C4661F09E66000DF9CD5 /* SearchTableViewController.swift in Sources */,
 				8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */,
 				C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */,
 				8F1F32451F0170C100DE910C /* BEMPathManager.m in Sources */,
