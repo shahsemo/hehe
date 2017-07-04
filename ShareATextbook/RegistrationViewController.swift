@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
+class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var nameTextField : UITextField!
@@ -18,8 +18,8 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     @IBOutlet weak var passwordTextField : UITextField!
     @IBOutlet weak var phoneTextField : UITextField!
     @IBOutlet weak var confirmPasswordField : UITextField!
-    
     @IBOutlet weak var TOSBox: BEMCheckBox!
+    @IBOutlet weak var imageView: UIImageView!
     
     
     
@@ -30,95 +30,142 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     var confirmField : String = ""
     var agreeToTOS : Bool = true
     
-    
+    var regDA = registrationDA()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
         TOSBox.delegate = self
         view.backgroundColor = UIColor(r: 240, g: 240, b: 240)
         
-    
+        
+        // Set up UI
         setupNavigationBar()
+        setUpImageView()
         
         
     }
     
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        TOSBox.setOn(true, animated: true)
-//    }
-//    
     
     
-
     
     // Function to create users
     @IBAction func createUser() {
         
+        var userCreated = false
+        
         // Put text fields value into the variables
-            usernameField = nameTextField.text!
-            passwordField = passwordTextField.text!
-            emailField = emailTextField.text!
-            phoneField = passwordTextField.text!
-            confirmField = confirmPasswordField.text!
+        usernameField = nameTextField.text!
+        passwordField = passwordTextField.text!
+        emailField = emailTextField.text!
+        phoneField = phoneTextField.text!
+        confirmField = confirmPasswordField.text!
         
         
         // Check if password field matches confirm field
-            if passwordField == confirmField {
+        if passwordField == confirmField {
+            // Convert password to SHA512
+            passwordField = maskPassword(passwordField).uppercased()
+            confirmField = maskPassword(confirmField).uppercased()
+        }
+        
+        
+        
+        
+        // Check if the userfields is filled
+        if checkAllFieldsRequired() == true {
+            
+            // Passing data to the Data Manager Function
+            userCreated = registrationDA.createUser(usernameField, emailField, passwordField, phoneField, "False", "False", "E")
+            
+            
+            // Print results
+            print(userCreated)
+            
+            // Hash user
+            if userCreated == true {
+                print("User created!")
                 
-                // Convert password to SHA512
-                    passwordField = maskPassword(passwordField)
-                    confirmField = maskPassword(confirmField)
+                //regDA.loginAndPost(emailField, "")
             }
+            
+            
+        } // End of the if
         
         
-        print("\(usernameField) \n")
-        print("\(passwordField) \n")
-        print("\(emailField) \n")
-        print("\(phoneField) \n")
         
+    } // end of create user
+    
+    
+    
+    
+    @IBAction func chooseImage(_ sender: Any) {
+        
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        
+        let actionSheet = UIAlertController(title: "Choose a photo source", message: "pick one", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler:  { (action: UIAlertAction) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler:  { (action: UIAlertAction) in
+            
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:  nil ))
+        
+        self.present(actionSheet, animated: true, completion: nil)
         
     }
+    
     
     // Create function for convert password
     // to SHA512 as an requirement
     func maskPassword(_ password: String) -> String {
-            return sha512Hex(string: password)
-        }
+        return sha512Hex(string: password)
+    }
     
-
+    
     
     
     // Create function to check if password match
     // If password is true, returns.
-        func checkPasswordMatch() -> Bool {
-            
-            if passwordField == confirmField {
-                return true
-            } else {
-                return false
-            }
-            
-            
+    func checkPasswordMatch() -> Bool {
+        
+        if passwordField == confirmField {
+            return true
+        } else {
+            return false
         }
+        
+        
+    }
     
     // Create function to check if the fields are filled
     // If fields are filled, return true.
-        func checkAllFieldsRequired() -> Bool {
-            
-            var message = ""
-            var validFormat = false
-            
-            if usernameField.isEmpty == true { message = "Username is required" }
-            else if isValidEmail(emailField) != true { message = "Email is required/invalid" }
-            else if phoneField.isEmpty == true { message = "Phone number is required"}
-            else if passwordField != confirmField { message = "Password does not match" }
-            else if agreeToTOS == false { message = "Must agree to the terms" }
-            else { validFormat = true }
-            
+    func checkAllFieldsRequired() -> Bool {
+        
+        var message = ""
+        var validFormat = false
+        
+        if usernameField.isEmpty == true { message = "Username is required" }
+        else if isValidEmail(emailField) != true { message = "Email is required/invalid" }
+        else if phoneField.isEmpty == true { message = "Phone number is required"}
+        else if passwordField != confirmField { message = "Password does not match" }
+        else if agreeToTOS == false { message = "Must agree to the terms" }
+        else { validFormat = true }
+        
+        
+        if (validFormat == false){
             let uiAlert = UIAlertController(
                 title: "Required Fills",
                 message: message,
@@ -126,12 +173,13 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
             
             uiAlert.addAction(UIAlertAction(title: "Ok", style: .default,handler: nil))
             self.present(uiAlert, animated:true, completion: nil)
-                
-        
-            return validFormat
-            
         }
-
+        
+        
+        return validFormat
+        
+    }
+    
     
     // Create function to check if username exists in the database
     func checkUserExist() -> Bool {
@@ -170,9 +218,9 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
     // Set up the navigation bar
     func setupNavigationBar() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil )
-       
         
-      
+        
+        
     }
     
     
@@ -192,7 +240,22 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate {
         return fields.characters.count > 4 && fields.rangeOfCharacter(from: .whitespacesAndNewlines) == nil
     }
     
+    func setUpImageView() {
+        imageView.layer.borderWidth = 1
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.layer.cornerRadius = imageView.frame.height/2
+        imageView.clipsToBounds = true
+    }
     
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.image = image
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
     
 }
 
@@ -204,6 +267,5 @@ extension UIColor {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
 }
-
 
 

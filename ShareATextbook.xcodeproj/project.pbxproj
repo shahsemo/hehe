@@ -13,8 +13,10 @@
 		8F1F32431F0170C100DE910C /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323D1F0170C100DE910C /* BEMCheckBox.m */; };
 		8F1F32441F0170C100DE910C /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323F1F0170C100DE910C /* BEMCheckBoxGroup.m */; };
 		8F1F32451F0170C100DE910C /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F32411F0170C100DE910C /* BEMPathManager.m */; };
-		8F1F324B1F01942C00DE910C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */; };
 		8F1F324D1F0194A100DE910C /* HomeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */; };
+		8F32DB031F0BBE730021D095 /* RegistrationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32DB021F0BBE730021D095 /* RegistrationDataManager.swift */; };
+		8F32DB051F0BBEB40021D095 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32DB041F0BBEB40021D095 /* HomeViewController.swift */; };
+		8F32DB071F0BBF3B0021D095 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F32DB061F0BBF3B0021D095 /* homepage.storyboard */; };
 		8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */; };
 		8FF513F41F01EB13000211DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF513F31F01EB13000211DB /* Security.framework */; };
 		C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF31EF1563E00CBF4F1 /* HTTP.swift */; };
@@ -63,8 +65,10 @@
 		8F1F32401F0170C100DE910C /* BEMPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPathManager.h; sourceTree = "<group>"; };
 		8F1F32411F0170C100DE910C /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPathManager.m; sourceTree = "<group>"; };
 		8F1F32461F01710400DE910C /* CheckboxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxHeader.h; sourceTree = "<group>"; };
-		8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentTableViewCell.swift; sourceTree = "<group>"; };
+		8F32DB021F0BBE730021D095 /* RegistrationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataManager.swift; sourceTree = "<group>"; };
+		8F32DB041F0BBEB40021D095 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8F32DB061F0BBF3B0021D095 /* homepage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
 		8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		8FF513F31F01EB13000211DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C917BDF31EF1563E00CBF4F1 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 			children = (
 				C920D66E1EB624E700D095FC /* Main.storyboard */,
 				51E9C45F1F09E39200DF9CD5 /* Search.storyboard */,
+				8F32DB061F0BBF3B0021D095 /* homepage.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -241,8 +246,8 @@
 				C920D66C1EB624E700D095FC /* SecondViewController.swift */,
 				C920D69D1EB6265400D095FC /* LoginViewController.swift */,
 				8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */,
-				8F1F324A1F01942C00DE910C /* HomeTableViewController.swift */,
 				8F1F324C1F0194A100DE910C /* HomeContentTableViewCell.swift */,
+				8F32DB041F0BBEB40021D095 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 		C921B9221ED8772C00599E7B /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
+				8F32DB021F0BBE730021D095 /* RegistrationDataManager.swift */,
 			);
 			name = DataManagers;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 			files = (
 				C920D6751EB624E700D095FC /* LaunchScreen.storyboard in Resources */,
 				51E9C4601F09E39200DF9CD5 /* Search.storyboard in Resources */,
+				8F32DB071F0BBF3B0021D095 /* homepage.storyboard in Resources */,
 				C920D6721EB624E700D095FC /* Assets.xcassets in Resources */,
 				C920D6701EB624E700D095FC /* Main.storyboard in Resources */,
 			);
@@ -413,7 +420,8 @@
 				8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */,
 				C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */,
 				8F1F324D1F0194A100DE910C /* HomeContentTableViewCell.swift in Sources */,
-				8F1F324B1F01942C00DE910C /* HomeTableViewController.swift in Sources */,
+				8F32DB031F0BBE730021D095 /* RegistrationDataManager.swift in Sources */,
+				8F32DB051F0BBEB40021D095 /* HomeViewController.swift in Sources */,
 				C9CF89111EB9F14000B5AE95 /* Constants.swift in Sources */,
 				C920D69E1EB6265400D095FC /* LoginViewController.swift in Sources */,
 				8F1F32421F0170C100DE910C /* BEMAnimationManager.m in Sources */,
