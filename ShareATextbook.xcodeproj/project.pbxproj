@@ -20,7 +20,6 @@
 		8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */; };
 		8FDF30E61F0BD5AA00359916 /* feature.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDF30E51F0BD5AA00359916 /* feature.xib */; };
 		8FDF30E81F0BD69400359916 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF30E71F0BD69400359916 /* FeatureView.swift */; };
-		8FDF30EA1F0BD81B00359916 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF30E91F0BD81B00359916 /* HomeDataManager.swift */; };
 		8FF513F41F01EB13000211DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF513F31F01EB13000211DB /* Security.framework */; };
 		C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF31EF1563E00CBF4F1 /* HTTP.swift */; };
 		C917BDF61EF1566D00CBF4F1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */; };
@@ -75,7 +74,6 @@
 		8FDCAB011EFAFC14001D903F /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		8FDF30E51F0BD5AA00359916 /* feature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = feature.xib; sourceTree = "<group>"; };
 		8FDF30E71F0BD69400359916 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
-		8FDF30E91F0BD81B00359916 /* HomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		8FF513F31F01EB13000211DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C917BDF31EF1563E00CBF4F1 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		C917BDF51EF1566D00CBF4F1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				8F32DB021F0BBE730021D095 /* RegistrationDataManager.swift */,
-				8FDF30E91F0BD81B00359916 /* HomeDataManager.swift */,
 			);
 			name = DataManagers;
 			sourceTree = "<group>";
@@ -435,7 +432,6 @@
 				8F1F32451F0170C100DE910C /* BEMPathManager.m in Sources */,
 				C920D66D1EB624E700D095FC /* SecondViewController.swift in Sources */,
 				C9690BC01EB994BB0054BAB7 /* CustomTabBarController.swift in Sources */,
-				8FDF30EA1F0BD81B00359916 /* HomeDataManager.swift in Sources */,
 				8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */,
 				8FDF30E81F0BD69400359916 /* FeatureView.swift in Sources */,
 				C920D6691EB624E700D095FC /* AppDelegate.swift in Sources */,
