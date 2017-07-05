@@ -53,6 +53,9 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
     @IBAction func createUser() {
         
         var userCreated = false
+        let showEmail = "False"
+        let showPhone = "False"
+        let userType = "E"
         
         // Put text fields value into the variables
         usernameField = nameTextField.text!
@@ -73,7 +76,7 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
         if checkAllFieldsRequired() == true {
             
             // Passing data to the Data Manager Function
-            userCreated = registrationDA.createUser(usernameField, emailField, passwordField, phoneField, "False", "False", "E")
+            userCreated = registrationDA.createUser(usernameField, emailField, passwordField, phoneField, showEmail, showPhone, userType)
             
             
             // Print results
@@ -106,8 +109,12 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
         let actionSheet = UIAlertController(title: "Choose a photo source", message: "pick one", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler:  { (action: UIAlertAction) in
-            imagePickerController.sourceType = .camera
-            self.present(imagePickerController, animated: true, completion: nil)
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            } 
+            
             
         }))
         
@@ -154,17 +161,19 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
         var message = ""
         var validFormat = false
         
-        if usernameField.isEmpty == true { message = "Username is required" }
-        else if isValidEmail(emailField) != true { message = "Email is required/invalid" }
-        else if phoneField.isEmpty == true { message = "Phone number is required"}
-        else if passwordField != confirmField { message = "Password does not match" }
-        else if agreeToTOS == false { message = "Must agree to the terms" }
+        if usernameField.isEmpty == true { message = "- Username cannot be blank\n" }
+        else if isValidEmail(emailField) != true { message = "- Email cannot be blank\n" }
+        else if phoneField.isEmpty == true { message = "- Phone number is required\n"}
+        else if passwordField.isEmpty == true { message = "- Password must be at least 6 characters\n" }
+        else if confirmField.isEmpty == true { message = "- Confirm password cannot be blank\n" }
+        else if passwordField != confirmField { message = "- Password does not match\n" }
+        else if agreeToTOS == false { message = "- Must agree to the terms\n" }
         else { validFormat = true }
         
         
         if (validFormat == false){
             let uiAlert = UIAlertController(
-                title: "Required Fills",
+                title: "Whoops!",
                 message: message,
                 preferredStyle: UIAlertControllerStyle.alert)
             
@@ -237,7 +246,7 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
     }
     
     func setUpImageView() {
-        imageView.layer.borderWidth = 1
+        imageView.layer.borderWidth = 0.5
         imageView.layer.masksToBounds = true
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.cornerRadius = imageView.frame.height/2
