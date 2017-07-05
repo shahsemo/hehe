@@ -69,9 +69,6 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
             confirmField = maskPassword(confirmField).uppercased()
         }
         
-        
-        
-        
         // Check if the userfields is filled
         if checkAllFieldsRequired() == true {
             
@@ -174,7 +171,6 @@ class RegistrationViewController: UIViewController, BEMCheckBoxDelegate, UIImage
             uiAlert.addAction(UIAlertAction(title: "Ok", style: .default,handler: nil))
             self.present(uiAlert, animated:true, completion: nil)
         }
-        
         
         return validFormat
         

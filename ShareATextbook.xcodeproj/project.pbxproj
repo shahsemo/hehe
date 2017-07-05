@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8130501F0BB03800FBA165 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81304F1F0BB03800FBA165 /* LoginDataManager.swift */; };
 		51E9C4601F09E39200DF9CD5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E9C45F1F09E39200DF9CD5 /* Search.storyboard */; };
 		8F1F32361EFF00D700DE910C /* CustomUIViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */; };
 		8F1F32421F0170C100DE910C /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F323B1F0170C100DE910C /* BEMAnimationManager.m */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B81304F1F0BB03800FBA165 /* LoginDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		51E9C45F1F09E39200DF9CD5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIViewButtons.swift; sourceTree = "<group>"; };
 		8F1F323A1F0170C100DE910C /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				8F32DB021F0BBE730021D095 /* RegistrationDataManager.swift */,
+				2B81304F1F0BB03800FBA165 /* LoginDataManager.swift */,
 			);
 			name = DataManagers;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				C917BDF41EF1563E00CBF4F1 /* HTTP.swift in Sources */,
 				8F1F32431F0170C100DE910C /* BEMCheckBox.m in Sources */,
 				C920D69C1EB6259900D095FC /* User.swift in Sources */,
+				2B8130501F0BB03800FBA165 /* LoginDataManager.swift in Sources */,
 				8F1F32441F0170C100DE910C /* BEMCheckBoxGroup.m in Sources */,
 				C9F1F3831EC1FD8C00E8C71C /* CustomNavigationViewController.swift in Sources */,
 				8FDCAB021EFAFC14001D903F /* RegistrationViewController.swift in Sources */,
