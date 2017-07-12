@@ -58,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		2B81304F1F0BB03800FBA165 /* LoginDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		51CC32731F14BB6F0039B187 /* FacebookHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacebookHeader.h; sourceTree = "<group>"; };
 		51E9C45F1F09E39200DF9CD5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		8F1F32351EFF00D700DE910C /* CustomUIViewButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIViewButtons.swift; sourceTree = "<group>"; };
 		8F1F323A1F0170C100DE910C /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8F1F32461F01710400DE910C /* CheckboxHeader.h */,
+				51CC32731F14BB6F0039B187 /* FacebookHeader.h */,
 			);
 			name = "Header Files";
 			path = ..;
@@ -598,6 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 89782M2XS3;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "~/Documents/FacebookSDK";
 				INFOPLIST_FILE = "$(SRCROOT)/ShareATextbook/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

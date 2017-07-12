@@ -10,83 +10,124 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+//    private let LOGIN_SEGUE = "loginSegue"
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet var passwordTextfield : UITextField!
     
     var emailField : String = ""
     var passwordField : String = ""
+    var loggedUserId : String = ""
+    var loggedToken : String = ""
     
     @IBAction func loginBtn(_ sender: Any) {
         emailLogin()
+//        self.performSegue(withIdentifier: LOGIN_SEGUE, sender: nil)
     }
     
+    @IBAction func fbLoginBtn(_ sender: Any) {
+    }
     
     func emailLogin()
     {
-        let email = emailTextField.text!
-        var password = passwordTextfield.text!
-        
+        emailField = emailTextField.text!
+        passwordField = passwordTextfield.text!
+        var password = ""
+        print(emailField)
+        print(passwordField)
         var token : String!
         var userId : String!
         
         let json = JSON.init([
-            "email" : email
+            "email" : emailField
         ])
+        if checkAllFieldsRequired() == true {
+            DispatchQueue.global(qos: .background).async {
+                HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/getnonce", json: json, onComplete: {
+                    json, response, error in
+                    
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    
+                    if response != nil
+                    {
+                        print(json!)
+                        
+                        let nonce = (json!["nonce"].string)
+                        password = self.sha512Hex(string: (self.sha512Hex(string: self.passwordTextfield.text!).uppercased() + nonce!)).uppercased()
+                        
+                        let loginJson = JSON.init([
+                            "type" : "E",
+                            "email" : self.emailField,
+                            "password" : password
+                            ])
+                        
+                        HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/login", json: loginJson, onComplete: {
+                            json, response, error in
+                            
+                            if json != nil {
+                                print(json!)
+                                token = (json!["token"].string)
+                                userId = (json!["userid"].string)
+//                                print(token)
+//                                print(userId)
+                                self.loggedUserId = userId
+                                self.loggedToken = token
+                                print("LoggedUserId = \(self.loggedUserId)")
+                                print("LoggedToken = \(self.loggedToken)")
+                                //                            let saveToken: Bool = KeychainWrapper.standard.set(token, forKey: "sessionToken")
+                                //                            let saveUserId: Bool = KeychainWrapper.standard.set(userId, value(forKey: "userid"))
+                                
+                                if token == nil
+                                {
+                                    print(error!)
+                                }
+                                else
+                                {
+                                    DispatchQueue.main.async {
+                                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+                                        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! CustomTabBarController
+                                        self.present(homeViewController, animated: true, completion: nil)
+                                    }
+                                    
+                                }
+                                return
+                            }
+                            
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                            
+                        })
+                        return
+                    }
+                    
+                })
+            } // end of dispatcher
+        } // end of if checkallfields
+        return
         
-        DispatchQueue.global(qos: .background).async {
-            HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/getnonce", json: json, onComplete: {
-                json, response, error in
-                
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                
-                if response != nil
-                {
-                    print(json!)
-                    
-                    let nonce = (json!["nonce"].string)
-                    password = self.sha512Hex(string: (self.sha512Hex(string: self.passwordTextfield.text!).uppercased() + nonce!)).uppercased()
-                    let loginJson = JSON.init([
-                        "type" : "E",
-                        "email" : email,
-                        "password" : password
-                        ])
-                    
-                    HTTP.postJSON(url: "http://13.228.39.122/FP05_883458374658792/1.0/user/login", json: loginJson, onComplete: {
-                        json, response, error in
-                        
-                        if json != nil {
-                            print(json!)
-                            token = (json!["token"].string)
-                            userId = (json!["userid"].string)
-                            print(token)
-                            print(userId)
-//                            let saveToken: Bool = KeychainWrapper.standard.set(token, forKey: "sessionToken")
-//                            let saveUserId: Bool = KeychainWrapper.standard.set(userId, value(forKey: "userid"))
-                            return
-                        }
-                        
-                        if error != nil {
-                            print(error!)
-                            return
-                        }
-                        
-                    })
-                    return
-                }
-            })
-        }
+
     }
+    
     func checkAllFieldsRequired() -> Bool
     {
         var message = ""
+        var usernameMsg = ""
+        var passwordMsg = ""
         var validFormat = false
         
-        if emailField.isEmpty == true {message = "Email is required!"}
-        else if passwordField.isEmpty == true {message = "Invalid Password/Password is required!"}
-        else {validFormat = true}
+        if emailField.isEmpty == true || passwordField.isEmpty == true {
+            
+            if emailField.isEmpty == true {usernameMsg = "Email is required!\n"}
+            else if passwordField.isEmpty == true {passwordMsg = "Invalid Password/Password is required!\n"}
+        } else {validFormat = true}
+        
+        message = usernameMsg + passwordMsg
         
         if (validFormat == false)
         {
